@@ -1,3 +1,4 @@
-app:
-    resource: "@AppBundle/Controller/"
+star_wars_names:
+    resource: "@StarWarsNamesBundle/Controller/"
     type:     annotation
+    prefix:   /
