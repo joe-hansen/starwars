@@ -19,7 +19,7 @@ class NameListGenerator implements NameListGeneratorInterface
 	 *
 	 * @param Container $container
 	 */
-	public function __construct(Container $container) {
+	public function __construct($container) {
 		$this->container = $container;
 	}
 
@@ -40,6 +40,6 @@ class NameListGenerator implements NameListGeneratorInterface
 	 */
 	public function getRandomName() {
 		$allNames = $this->getAllNames();
-		return array($allNames[mt_rand(0, count($allNames))]);
+		return array($allNames[mt_rand(0, (count($allNames) - 1))]);
 	}
 }

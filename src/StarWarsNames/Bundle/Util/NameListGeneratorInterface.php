@@ -12,7 +12,7 @@ interface NameListGeneratorInterface {
 	/**
 	 * @param Container $container
 	 */
-	public function __construct(Container $container);
+	public function __construct($container);
 
 	/**
 	 * Returns all star wars names from configured parameters.
