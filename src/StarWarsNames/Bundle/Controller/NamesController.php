@@ -11,25 +11,31 @@ class NamesController extends Controller
 	/**
 	 * @Route("/")
 	 */
-	public function showAllNamesAction() {
+	public function showAllNamesAction()
+	{
 		$nameListGenerator = new NameListGenerator($this->container);
 
-		return $this->render('StarWarsNamesBundle:Default:index.html.twig', [
-			'mode' => 'all',
+		return $this->render(
+			'StarWarsNamesBundle:Default:index.html.twig', [
+			'mode'  => 'all',
 			'names' => $nameListGenerator->getAllNames()
-		]);
+		]
+		);
 	}
+
 
 	/**
 	 * @Route("/randomName")
 	 */
-	public function showRandomNameAction() {
+	public function showRandomNameAction()
+	{
 		$nameListGenerator = new NameListGenerator($this->container);
 
-		return $this->render('StarWarsNamesBundle:Default:index.html.twig', [
-			'mode' => 'random',
+		return $this->render(
+			'StarWarsNamesBundle:Default:index.html.twig', [
+			'mode'  => 'random',
 			'names' => $nameListGenerator->getRandomName()
-		]);
+		]
+		);
 	}
-
 }

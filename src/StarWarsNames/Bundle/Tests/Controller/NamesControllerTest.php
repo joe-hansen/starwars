@@ -6,12 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class NamesControllerTest extends WebTestCase
 {
-    public function testIndex()
-    {
-        $client = static::createClient();
-        $client->request('GET', '/');
-        $this->assertContains('Admiral Ackbar', $client->getResponse()->getContent());
-    }
+	public function testIndex()
+	{
+		$client = static::createClient();
+		$client->request('GET', '/');
+		$this->assertContains('Admiral Ackbar', $client->getResponse()->getContent());
+	}
+
 
 	public function testRandom()
 	{

@@ -7,17 +7,19 @@ use Symfony\Component\DependencyInjection\Container;
 /**
  * Interface NameListGeneratorInterface
  */
-interface NameListGeneratorInterface {
+interface NameListGeneratorInterface
+{
 
 	/**
 	 * @param Container $container
 	 */
 	public function __construct($container);
 
+
 	/**
 	 * Returns all star wars names from configured parameters.
 	 *
- 	 * @param Container $container
+	 * @param Container $container
 	 *
 	 * @return array
 	 */
@@ -30,5 +32,4 @@ interface NameListGeneratorInterface {
 	 * @return array
 	 */
 	public function getRandomName();
-
 }

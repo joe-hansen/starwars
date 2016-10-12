@@ -6,11 +6,14 @@ use StarWarsNames\Bundle\Util\NameListGenerator;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\DependencyInjection\Container;
 
-class NameListGeneratorTest extends WebTestCase {
+class NameListGeneratorTest extends WebTestCase
+{
 
 	protected $fullNameList = array('a', 'b', 'c');
 
-	public function testGetAllNames() {
+
+	public function testGetAllNames()
+	{
 		$container = $this->getMockBuilder('Container')
 			->setMethods(array('getParameter'))
 			->getMock();
@@ -21,11 +24,13 @@ class NameListGeneratorTest extends WebTestCase {
 			->will($this->returnValue($this->fullNameList));
 
 		$nameListGenerator = new NameListGenerator($container);
-		$nameList = $nameListGenerator->getAllNames();
+		$nameList          = $nameListGenerator->getAllNames();
 		$this->assertEquals($this->fullNameList, $nameList);
 	}
 
-	public function testGetRandomName() {
+
+	public function testGetRandomName()
+	{
 		$container = $this->getMockBuilder('Container')
 			->setMethods(array('getParameter'))
 			->getMock();
@@ -36,9 +41,8 @@ class NameListGeneratorTest extends WebTestCase {
 			->will($this->returnValue($this->fullNameList));
 
 		$nameListGenerator = new NameListGenerator($container);
-		$nameList = $nameListGenerator->getRandomName();
+		$nameList          = $nameListGenerator->getRandomName();
 		$this->assertCount(1, $nameList);
 		$this->assertEquals(true, in_array($nameList[0], $this->fullNameList));
 	}
-
 }
