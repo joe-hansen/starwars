@@ -7,11 +7,11 @@ Installation guide:
 - Install php (at least the cli) and git - e.g. in Ubuntu using apt: "sudo apt-get install php5-cli git"
 - Change to a folder of your choice, where you want to install the application to - e.g. "cd /var"
 - Checkout the application to that folder: "git clone https://github.com/joe-hansen/starwars starwars"
-- Change into the application directory: "cd /var/starwars"
+- Change into the application directory: "cd starwars"
 - Update all dependencies using the packaged composer: "./composer.phar install" - during the install process some data is requested - database, mailer and csrf protection are not used, so you can leave the defaults.
 - Check dependencies again and follow latest instructions: "php bin/symfony_requirements"
 - Check for security issues and follow latest instructions: "php bin/console security:check"
-- Start the application "php bin/console server:run --env=prod"
+- Start the application "php bin/console server:run --env=prod" - dont mind the "error" about using the built-in server, because the app is only used locally.
 - You can now access the application in your browser via the URL "http://localhost:8000"
 - You will see a little web-app, where you can see all star wars names - also you are able to request a random name on click.
 
@@ -27,6 +27,7 @@ RESEARCH - 4 HOURS
 - 40m Research: Reading Symfony best practices
 - 30m Setting up phpunit and getting it to work
 - 30m Research: Using Bundles in Symfony
+
 DEVELOPMENT - 2 HOURS
 - 20m Deciding architecture
 - 10m Creating Bundle
@@ -35,6 +36,7 @@ DEVELOPMENT - 2 HOURS
 - 20m Implementing the Controller
 - 15m Implementing the NameListGenerator and its Interface
 - 30m Writing some tests ...
+
 DOCUMENTATION - 1 HOUR
 - 40m Writing and verifying the installationguide
 - 20m Finalising documentation
